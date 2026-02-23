@@ -1,0 +1,77 @@
+{
+  "info": {
+    "name": "Travel Planner API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Project",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Chicago Art Trip\",\n    \"description\": \"Exploring masterpieces\"\n}",
+          "options": {
+            "raw": { "language": "json" }
+          }
+        },
+        "url": "http://localhost:8000/projects/"
+      }
+    },
+    {
+      "name": "List Projects",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8000/projects/"
+      }
+    },
+    {
+      "name": "Get Project by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "http://localhost:8000/projects/1"
+      }
+    },
+    {
+      "name": "Add Place to Project",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"external_id\": \"27992\",\n    \"notes\": \"A must-see masterpiece\"\n}",
+          "options": {
+            "raw": { "language": "json" }
+          }
+        },
+        "url": "http://localhost:8000/projects/1/places/"
+      }
+    },
+    {
+      "name": "Update Place (Mark Visited)",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"is_visited\": true,\n    \"notes\": \"Updated notes\"\n}",
+          "options": {
+            "raw": { "language": "json" }
+          }
+        },
+        "url": "http://localhost:8000/places/1"
+      }
+    },
+    {
+      "name": "Delete Project",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "http://localhost:8000/projects/1"
+      }
+    }
+  ]
+}
