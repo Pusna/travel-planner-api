@@ -11,7 +11,7 @@ async def lifespan(app: FastAPI):
 
     yield
 
-    await conn.close()
+    await engine.dispose()
 
 
 app = FastAPI(
